@@ -1,0 +1,34 @@
+{
+  "name": "disclose",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jabed27/Disclose.git"
+  },
+  "keywords": [
+    "Rest",
+    "Api"
+  ],
+  "author": "Jabed27",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jabed27/Disclose/issues"
+  },
+  "homepage": "https://github.com/Jabed27/Disclose#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase": "^7.17.1",
+    "firebase-admin": "^9.0.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
