@@ -29,10 +29,13 @@ class ContactModel{
   };
 
   
-  GetContactUserData(){
+  GetContactUserData(res){
     usersCollection.get().then(snapshot => {
       snapshot.forEach(user => {
         console.log(user.id, ' => ', user.data());
+        res.status(200).json({
+          user
+        })
       });
     })
     .catch(error => {
