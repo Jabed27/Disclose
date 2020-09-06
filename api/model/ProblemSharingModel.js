@@ -48,6 +48,9 @@ class ProblemShare{
         snapshot.forEach(user => {
           console.log(user.id, ' => ', user.data());
         });
+        res.status(201).json({
+          message:"problem shown!"
+      })
       })
       .catch(error => {
         console.error(error);

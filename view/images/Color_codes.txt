@@ -1,0 +1,2 @@
+Purple: #8E6BA5
+Yellow: #FFED91

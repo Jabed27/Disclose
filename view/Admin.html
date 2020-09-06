@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+      <head>
+        <title style="color:ffed8c">Disclose</title> 
+        <link rel="stylesheet" href="css/admin.css">
+        <script src = "httprequest/admin.js" defer></script>
+      </head>
+      <style>
+        table{
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+
+        }
+        td,th{
+          border: 1px solid #cccccc;
+          padding: 9px;
+
+        }
+        th{
+          font-weight: bold;
+          text-transform:uppercase;
+        }
+      </style>
+
+      <script>
+        var allcontactdata = {};
+         fetch('http://localhost:3000/disclose/api/contacts/read').then(res=>{
+           res.json().then(
+             data=>{
+               console.log(data);
+               let sortDirection = false;
+               allcontactdata = data;
+               const tablebody = document.getElementById('tableData');
+               let datatable = ' ';
+               for(var key of Object.keys(allcontactdata['loadallcontact'])){
+                 console.log(key + "->"+ JSON.stringify(allcontactdata['loadallcontact'][key]));
+                 datatable += `<tr><td>${allcontactdata['loadallcontact'][key]['name']}</td><td>${allcontactdata['loadallcontact'][key]['email']}</td><td>${allcontactdata['loadallcontact'][key]['message']}</td></tr>`;
+           
+               }
+               tablebody.innerHTML = datatable;
+
+             }
+           )
+         })
+
+      </script>
+      
+      <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Disclose</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav1" href="#">Log-in<span style="font-weight: bold;"></span> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav1" href="#">Sign-up<span style="font-weight: bold;"></span></a>
+                </li>
+              </ul>
+              
+            </div>
+          </nav> 
+          <h1 class="display-3">Hello Admin!</h1>
+
+        <table>
+              <thead>
+               <tr>
+                 <th>Name</th>
+                 <th>Email</th>
+                 <th>Message</th>
+               </tr>
+            
+              </thead>
+              <tbody id="tableData">
+
+              </tbody>
+
+        </table>
+          
+           
+          
+      </body>
+</html>

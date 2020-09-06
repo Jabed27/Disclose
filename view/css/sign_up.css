@@ -1,0 +1,87 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ----------------------------------------------------------------------------- to hide overflow in mobile device*/
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+
+/* ----------------------------------------------------------------------------- to hide overflow in mobile device*/
+
+/* html, body {
+    height: 100%;
+    margin: 0px;
+} */
+
+.row {
+  height: 100vh;
+}
+
+.signUp-section {
+  background: #8e6ba5;
+  box-sizing: border-box;
+}
+
+.needs-validation {
+  background: #8e6ba5;
+}
+
+label {
+  color: white;
+}
+
+.sign-up-btn {
+  background: wheat;
+  transition: all 0.3s ease-in-out;
+}
+
+.sign-up-btn:hover {
+  transform: scale(1.2);
+  /* color: #ffed91; */
+}
+
+.logIn-btn {
+  font-size: 12px;
+  height: 20px;
+  width: 80px;
+  border-radius: 10px;
+  padding: 0;
+  background: white;
+  transition: all 0.2s ease-in-out;
+
+  color: #8E6BA5;
+  font-weight: 600;
+}
+
+.logIn-btn:hover {
+    transform: scale(1.1);
+    /* color: #ffed91; */
+  }
+
+p{
+    margin: 0;
+    font-size: 12px;
+    color: lightgray;
+    font-weight: 500;
+}
+
+.left-img {
+  /* min-height: 100%; */
+  background-image: url("images/bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.left-img img {
+  width: 50%;
+}
+
+.signUp-section .signUp-icon img {
+  width: 20%;
+}

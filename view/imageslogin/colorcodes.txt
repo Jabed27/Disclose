@@ -1,0 +1,2 @@
+purple(dark): #8E6BA5
+purplr(light): #AF9CDA

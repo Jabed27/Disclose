@@ -8,7 +8,12 @@ const PostContactInfo = (req,res,next)=>{
 
 const GetContactinfo = (req,res,next)=>{
     var getcontactmodel = new ContactModel.ContactModel();
-    getcontactmodel.GetContactUserData(res);
+    //getcontactmodel.GetContactUserData();
+   var  loadallcontact = getcontactmodel.GetloadAllcontactuserdata();
+   res.status(200).json({
+       //message:"All contact",
+       loadallcontact:loadallcontact
+   })
 }
 module.exports = {
     PostContactInfo,
