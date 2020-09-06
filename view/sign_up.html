@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- my css -->
+    <link rel="stylesheet" href="css/sign_up.css">
+
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <!-- class="img-fluid"    d-flex align-items-center justify-content-center -->
+    <div class="sign-up">
+        <div class="row">
+
+            <!-- left side er image -->
+            <div class="col-md-6 pr-0 d-flex flex-column align-items-center left-img  my-0 ">
+                <!-- logo -->
+                <div class="d-flex justify-content-center pt-2">
+                    <img src="images1/logo.png" class="text-center" alt="">
+                </div>
+
+                <!-- illus -->
+                <div class="d-flex justify-content-center align-items-center align-self-center mt-5">
+                    <img src="images1/illus.png" class=" img-fluid mt-5" alt="">
+                </div>
+            </div>
+
+            <!-- right side er sign up section -->
+            <div class="col-md-6 pl-0 signUp-section py-3">
+
+                <!-- top icon in right section -->
+                <div class="signUp-icon text-center">
+                    <img src="images1/icon.png" alt="">
+                </div>
+
+                <!-- signUp form -->
+                <form class="needs-validation" novalidate>
+                    <!-- row name -->
+                    <div class="form-row px-5">
+                        <!-- First name -->
+                        <div class="col-md-6 mb-2">
+                            <label for="validationCustom01">First name</label>
+                            <input type="text" class="form-control" id="validationCustom01" required>
+
+                        </div>
+
+                        <!-- Last name -->
+                        <div class="col-md-6 mb-2">
+                            <label for="validationCustom02">Last name</label>
+                            <input type="text" class="form-control" id="validationCustom02" required>
+
+                        </div>
+                    </div>
+
+                    <!-- row email -->
+                    <div class="form-row px-5">
+                        <div class="col-md-12 mb-2">
+                            <label for="validationCustom03">Email ID</label>
+                            <input type="email" class="form-control" id="validationCustom03" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- row NID -->
+                    <div class="form-row px-5">
+                        <div class="col-md-12 mb-2">
+                            <label for="validationCustom04">National ID card no.</label>
+                            <input type="number" class="form-control" id="validationCustom04" required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- row Address -->
+                    <div class="form-row px-5">
+                        <div class="col-md-12 mb-2">
+                            <label for="validationCustom05">Address</label>
+                            <input type="text" class="form-control" id="validationCustom05" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- row password -->
+                    <div class="form-row px-5">
+
+                        <!-- password -->
+                        <div class="col-md-6 mb-2">
+                            <label for="validationCustom06_password">Password</label>
+                            <input type="password" class="form-control" id="validationCustom06_password" required>
+
+                        </div>
+
+                        <!-- confirm password -->
+                        <div class="col-md-6 mb-2">
+                            <label for="validationCustom07_confirmPass">Confirm Password</label>
+                            <input type="password" class="form-control" id="validationCustom07_confirmPass" required>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group px-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Agree to terms and conditions
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <!-- Sign Up Button -->
+                    <div class="text-center px-5">
+                        <button class="btn sign-up-btn " type="submit">Sign Up</button>
+                    </div>
+
+                    <!-- include LogIn -->
+                    <div class=" px-5 d-flex flex-row align-items-center justify-content-center mt-5">
+                        <p>Already have an account?</p>
+                        <button class="btn logIn-btn ml-3">Log In</button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- --------------------------------------------------------------------------------- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

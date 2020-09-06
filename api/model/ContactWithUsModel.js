@@ -1,16 +1,17 @@
 const firebase = require('./FirebaseConnect')
 const database = firebase.firestore();
 const usersCollection = database.collection('Contact');
-
+//loadAllContactUser will store all the contacts globally at the first time when the server run
+const loadAllContactUser = {}
 class ContactModel{
-
+  
   constructor()
   {
 
   }
   storeUserData(Name,Email,Message,res) {
   
-    const ID = usersCollection.doc('user01').set({
+    const ID = usersCollection.doc().set({
       name: Name,
       email: Email,
       message: Message
@@ -28,19 +29,26 @@ class ContactModel{
     });
   };
 
-  
-  GetContactUserData(res){
+  //firebase theke read
+  GetContactUserData(){
     usersCollection.get().then(snapshot => {
       snapshot.forEach(user => {
-        console.log(user.id, ' => ', user.data());
-        res.status(200).json({
-          user
-        })
+        //console.log(user.id, ' => ', user.data());
+        loadAllContactUser[user.id] = user.data();
+        //console.log(loadAllContactUser)
       });
     })
     .catch(error => {
       console.error(error);
     });
+  }
+  //server theke read korbo
+  GetloadAllcontactuserdata(){
+     return loadAllContactUser;
+  }
+  //admin will see 
+  getDataForAdmin(){
+    console.log(loadAllContactUser)
   }
 }
 
