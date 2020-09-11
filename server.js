@@ -59,4 +59,9 @@ app.get('/', function(req, res) {
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '/view/Admin.html'));
 });
-
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '/view/log_in.html'));
+});
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '/view/sign_up.html'));
+});

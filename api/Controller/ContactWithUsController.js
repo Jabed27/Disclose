@@ -1,9 +1,24 @@
+const { json } = require('body-parser');
 const ContactModel = require('../model/ContactWithUsModel')
 
 const PostContactInfo = (req,res,next)=>{
     
+    const username=req.body.name;
+    const useremail=req.body.email;
+    const message=req.body.msg;
+    console.log('username'+username);
     var contactmodel=new ContactModel.ContactModel();
-    contactmodel.storeUserData(req.body.name,req.body.email,req.body.msg,res);
+    //after storing to the firebase than it will store to the server
+    contactmodel.storeUserData(req.body.name,req.body.email,req.body.msg,res).then((uid)=>{
+        console.log(uid);
+        contactmodel.storeuserDataToServer(uid,username,useremail,message);
+        res.status(200).json({
+            message:"Contact message store successfully",
+            
+        })
+
+    });
+    
 }
 
 const GetContactinfo = (req,res,next)=>{
