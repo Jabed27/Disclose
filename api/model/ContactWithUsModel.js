@@ -9,24 +9,29 @@ class ContactModel{
   {
 
   }
-  storeUserData(Name,Email,Message,res) {
-  
-    const ID = usersCollection.doc().set({
+  //storing to the server
+  storeuserDataToServer(uid,username,useremail,message){
+    const details={
+      'name':username,
+      'email':useremail,
+      'message':message
+  };
+  var data = [];
+  data.push(details);
+  loadAllContactUser[uid] = details;
+  console.log(JSON.stringify(loadAllContactUser));
+  }
+
+  async storeUserData(Name,Email,Message,res){
+     var uid = usersCollection.doc().id;
+     console.log(uid)
+    await usersCollection.doc(uid).set({
       name: Name,
       email: Email,
       message: Message
     })
-    .then(()=>{
-      console.log('Data has been saved successfully !')
-      console.log(ID)
-      res.status(201).json({
-        message:"Contact succesfull!"
-    })
-    })
-      
-    .catch(error => {
-      console.error(error)
-    });
+    return uid;//uid needed for storing in the server
+    
   };
 
   //firebase theke read
