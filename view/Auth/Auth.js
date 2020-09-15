@@ -48,7 +48,6 @@ const sendHttpRequest = (method, url, data) =>{
         }
         xhr.onload = () =>{
             if (xhr.status >= 200 || xhr.status<=210) { 
-           
                 window.location.replace("/signin"),alert("You are signed up");
              } else { 
                alert(xhr.response)
@@ -87,24 +86,6 @@ const sendHttpRequest = (method, url, data) =>{
     
 };
 
-function signin(){
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-    const promise = auth.signInWithEmailAndPassword(email.value,password.value);
-    promise.catch(e=>alert(e.message));
-    //state change
-}
-auth.onAuthStateChanged(function(user){
-    if(user){
-        var email = user.email;
-        alert("Active user"+email);
-        //is signed in
-        
-    }else{
-        alert("No user");
-        //no user
-    }
-})
   document.getElementById("register").addEventListener('click', e => {
     e.preventDefault();
     signup();

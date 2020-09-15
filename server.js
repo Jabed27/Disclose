@@ -43,7 +43,7 @@ app.listen(PORT,()=>{      // now server is running
 })          
 // route created
 app.get('/',function(req, res){
-    res.sendFIle(path.join(__dirname, '/view/index.html'))
+    res.sendFile(path.join(__dirname, '/view/index.html'))
 })
 
 
