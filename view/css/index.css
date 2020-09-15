@@ -26,7 +26,7 @@ body {
 
 header {
   /* background-color: #8e6ba5; */
-  background-image: url("images/Image1.jpg");
+  background-image: url("/static/images/Image1.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -165,7 +165,7 @@ header {
 
 .vid {
   height: 600px;
-  background-image: url("images/image6\(video_one\).jpg");
+  background-image: url("/static/images/image6\(video_one\).jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
@@ -294,7 +294,7 @@ header {
 
 .footer {
   height: 500px;
-  background-image: url("images/Footer\(with-shadow\).png");
+  background-image: url("/static/images/Footer\(with-shadow\).png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
