@@ -8,13 +8,18 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+        <script  src="Auth/Auth.js" defer></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
         rel="stylesheet" />
 
     <!-- my css -->
-    <link rel="stylesheet" href="css/log_in.css">
+    <link rel="stylesheet" href="/static/css/log_in.css">
 
     <title>Log In</title>
 </head>
@@ -25,7 +30,7 @@
 
         <div class="top-part d-flex justify-content-center align-items-center flex-column">
 
-            <img src="imageslogin/image1.png" alt="log in illus">
+            <img src="/static/imageslogin/image1.png" alt="log in illus">
 
             <!-- <h6 class="px-5 text-center mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum
                 necessitatibus
@@ -42,7 +47,7 @@
 
                 <!-- row email -->
                 <div class="form-row mt-3">
-                    <input type="email" class="form-control my-input" placeholder="Email" id="validationCustom03"
+                    <input type="email" class="form-control my-input" placeholder="Email" id="email"
                         required>
                 </div>
 
@@ -51,7 +56,7 @@
                 <div class="form-row my-3">
                     <!-- password -->
                     <input type="password" class="form-control my-input" placeholder="Password"
-                        id="validationCustom06_password" required>
+                        id="password" required>
                 </div>
 
 
@@ -65,22 +70,22 @@
 
                     </div>
 
-                    <!-- Forget password -->
+                    <!-- Forget password 
                     <div>
                         <a href="">Forget password?</a>
                     </div>
-
+                    -->
                 </div>
 
                 <!-- Log In Button -->
                 <div class="text-center px-5 mt-3">
-                    <button class="btn logIn-btn " type="submit">Log In</button>
+                    <button onclick="signin()" class="btn logIn-btn " type="button">Log In</button>
                 </div>
 
                 <!-- create account -->
                 <div class=" px-5 d-flex flex-row align-items-center justify-content-center mt-5">
                     <p>Do not have any account?</p>
-                    <button class="btn logIn-btn ml-3">Create Account</button>
+                    <button class="btn logIn-btn ml-3"><a href="/static/sign_up.html">Create Account</a></button>
                 </div>
             </form>
         </div>

@@ -17,7 +17,7 @@ const contactRoute = require('./api/routes/contact')
 
 //importing problemshare routes
 const problemshareRoute = require('./api/routes/ProblemShare')
-
+const userRoute = require('./api/routes/Authentication')
 const loadcontactalldata = require('./api/model/ContactWithUsModel')
 // morgan will formate how we want to see the data
 app.use(morgan("dev"))//devloment mode e  dekhabe
@@ -35,33 +35,34 @@ const PORT = process.env.PORT || 3000
 
 app.use('/disclose/api/problemshare',problemshareRoute)
 app.use('/disclose/api/contacts',contactRoute)
+app.use('/disclose/api/auth',userRoute)
 app.listen(PORT,()=>{      // now server is running
     console.log(`Server is running on PORT ${PORT}`)
     //first server will loaded up all the data for the first time while the web is running
     new loadcontactalldata.ContactModel().GetContactUserData()
 })          
 // route created
-app.get('/',(req,res)=>{
-    res.send('<div><h1>Hello server is running jabu</h1><p>Hello jabed</p></div>')
+app.get('/',function(req, res){
+    res.sendFIle(path.join(__dirname, '/view/index.html'))
 })
 
 
 //all the html page are connecting with the server
 
-app.get('/', function(req, res) {
+app.get('/contact', function(req, res) {
     res.sendFile(path.join(__dirname, '/view/Contact.html'));
 });
 
-app.get('/', function(req, res) {
+app.get('/editpage', function(req, res) {
     res.sendFile(path.join(__dirname, '/view/EditPage.html'));
 });
 
-app.get('/', function(req, res) {
+app.get('/admin', function(req, res) {
     res.sendFile(path.join(__dirname, '/view/Admin.html'));
 });
-app.get('/', function(req, res) {
+app.get('/signin', function(req, res) {
     res.sendFile(path.join(__dirname, '/view/log_in.html'));
 });
-app.get('/', function(req, res) {
+app.get('/signup', function(req, res) {
     res.sendFile(path.join(__dirname, '/view/sign_up.html'));
 });
