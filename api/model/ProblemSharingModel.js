@@ -1,44 +1,54 @@
 const firebase  = require('./FirebaseConnect');
 const database = firebase.firestore();
 const problemcollection = database.collection('SharedProblem');
-
+const loadAllproblem = {}
 class ProblemShare{
     constructor(){
             
     }
-    storeSharedProblem(Name,location,catagory,complain,anonymous,res){
-         
-            const ID = problemcollection.doc().set({
+    //storing to the server
+  storeuserProblemToServer(uid,name,location,catagory,complain,anonymous){
+    const details={
+      'Complainer_name':name,
+      'Location':location,
+      'Problem_Catagory':catagory,
+      'Complain':complain,
+      'Anonymous':anonymous,
+  };
+  var data = [];
+  data.push(details);
+  loadAllproblem[uid] = details;
+  console.log("All prob "+JSON.stringify(loadAllproblem));
+  }
+   async storeSharedProblem(Name,location,catagory,complain,anonymous,res){
+    var uid = problemcollection.doc().id;
+            await problemcollection.doc().set({
                 Complainer_name:Name,
                 Location:location,
                 Problem_Catagory:catagory,
                 Complain:complain,
                 Anonymous:anonymous
               })
-            .then(()=>{
-                console.log('Problem saved successfully !')
-                res.status(201).json({
-                    message:"problem shared succesfully!"
-                })
-              })
-              .catch(error => {
-                console.error(error)
-              });
+              return uid;
     }
-
+   //firebase theke read hocche
     GetAllstoredComplain(res){
       problemcollection.get().then(snapshot => {
         snapshot.forEach(user => {
-          console.log(user.id, ' => ', user.data());
+          loadAllproblem[user.id] = user.data();
+          //console.log(user.id, ' => ', user.data());
+          //console.log(JSON.stringify(loadAllproblem))
         });
-        res.status(201).json({
-          snapshot
-        })
+       
       })
       .catch(error => {
         console.error(error);
       });
     }
+//server theke read korbe
+GetloadAlluserdproblemfromserver(){
+  return loadAllproblem;
+}
 
     GetSpecificComplain(res){
       const query = problemcollection.where('Location', '==', 'Hatirpool').where('Problem_Catagory','==','Wasa');
