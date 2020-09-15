@@ -19,6 +19,7 @@ const contactRoute = require('./api/routes/contact')
 const problemshareRoute = require('./api/routes/ProblemShare')
 const userRoute = require('./api/routes/Authentication')
 const loadcontactalldata = require('./api/model/ContactWithUsModel')
+const loadallsharedproblem = require('./api/model/ProblemSharingModel')
 // morgan will formate how we want to see the data
 app.use(morgan("dev"))//devloment mode e  dekhabe
 //ui te console er print er jonno cors middleware lagse
@@ -40,6 +41,7 @@ app.listen(PORT,()=>{      // now server is running
     console.log(`Server is running on PORT ${PORT}`)
     //first server will loaded up all the data for the first time while the web is running
     new loadcontactalldata.ContactModel().GetContactUserData()
+    new loadallsharedproblem.ProblemShare().GetAllstoredComplain()
 })          
 // route created
 app.get('/',function(req, res){
