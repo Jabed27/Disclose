@@ -2,7 +2,7 @@ const problemModel = require('../model/ProblemSharingModel')
 //storing 
 const Postproblem = (req,res,next)=>{
     var problemshare = new  problemModel.ProblemShare();
-    problemshare.storeSharedProblem(req.body.Complainer_name,req.body.Location,req.body.Problem_Catagory,req.body.Complain,req.body.Likes,req.body.Dislikes,req.body.Anonymous,res)
+    problemshare.storeSharedProblem(req.body.name,req.body.Location,req.body.Problem_Catagory,req.body.Complain,req.body.Anonymous,res)
 }
 //getting all complain
 const GetAllComplain=(req,res,next)=>{

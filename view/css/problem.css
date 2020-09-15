@@ -1,0 +1,100 @@
+/* ----------------------------------------------------------------------------- to hide overflow in mobile device*/
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+
+/* ----------------------------------------------------------------------------- to hide overflow in mobile device*/
+
+header {
+  background-color: #8e6ba5;
+  /* background-image: url("images/Image1.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%; */
+}
+
+.btn-out {
+  color: white;
+  font-weight: 600;
+  margin: 0 10px;
+  font-size: 20px;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-out:hover {
+  transform: scale(1.2);
+  color: #ffed91;
+}
+
+.nav-link {
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+/* ------------------------------------------------------------- main-section */
+
+.left-heading {
+  background: #8e6ba5;
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.img-div p {
+  width: fit-content;
+}
+
+.left-side img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.info p {
+  color: gray;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+textarea {
+  /* overflow-y: scroll; */
+  resize: none; /* Remove this if you want the user to resize the textarea */
+
+  border: 5px solid white !important;
+  background: whitesmoke !important;
+  border-radius: 20px !important;
+
+  -webkit-box-shadow: 9px 5px 24px 6px #989898;
+  box-shadow: 9px 5px 24px 6px #989898;
+}
+
+::placeholder {
+  color: gray !important;
+  font-size: 16px;
+  font-weight: 300 !important;
+}
+
+.btn-bottom {
+  width: fit-content;
+  border: none;
+  border-radius: 20px;
+  margin: 10px;
+  background: #8e6ba5;
+  padding: 5px 10px;
+  color: white;
+  line-height: 24px;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-bottom:hover {
+  transform: scale(1.1);
+  background-color: #ffed91;
+  color: black;
+  border: 2px solid black;
+}
