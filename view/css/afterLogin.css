@@ -1,0 +1,149 @@
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+
+/* ----------------------------------------------------------------------------- to hide overflow in mobile device*/
+
+header {
+  background-color: #ddd2f3;
+
+  /* background-image: url("images/Image1.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%; */
+}
+
+.btn-out {
+  /* color: white; */
+  font-weight: 600;
+  margin: 0 10px;
+  font-size: 20px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-out:hover {
+  transform: scale(1.1);
+  color: purple;
+}
+
+.nav-link {
+  margin: 0 10px;
+  font-size: 20px;
+}
+/* --------------------------------------------------------------------- banner */
+
+.banner {
+  background-image: url("/static/imagesafterlogin/images/Image2.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+img {
+  width: 80%;
+}
+
+.form-control {
+  width: 200px;
+}
+
+#btn-save {
+  /* background: yellowgreen; */
+  font-size: 1.2rem;
+  padding: 5px 15px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+#btn-save:hover {
+  background: wheat;
+}
+
+#btn-share {
+  background: linear-gradient(
+    68deg,
+    rgba(165, 104, 250, 1) 14%,
+    rgba(0, 216, 251, 1) 97%
+  );
+  font-size: 1.5rem;
+  padding: 10px 80px;
+  margin-top: 200px;
+
+  border: none;
+  border-radius: 50px;
+
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+#btn-share:hover {
+  transform: scale(1.1);
+  /* color: #ffed91; */
+}
+
+/* --------------------------------------------------------------------- card section */
+
+.card {
+  width: 700px;
+  margin: 10px;
+  /* margin-bottom: 0 ; */
+  /* padding: 0; */
+  -webkit-box-shadow: 9px 5px 24px 6px #989898;
+  box-shadow: 9px 5px 24px 6px #989898;
+  border-radius: 10px;
+}
+
+.card-body {
+  padding: 0;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.top-part {
+  /* background: teal; */
+  height: 50px;
+  color: black;
+}
+
+.mid-part {
+  /* background: powderblue; */
+  min-height: 50px;
+
+  min-width: 200px;
+  max-width: 500px;
+
+  border: 1px solid black;
+  /* border-radius: 10px; */
+
+  padding: 10px;
+  margin: 10px auto;
+}
+
+.bottom-part {
+  background: #8e6ba5;
+  height: 80px;
+  color: white;
+}
+
+#btn-comment {
+  background: #8e6ba5;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+
+  /* transition: all 0.4s ease-in-out; */
+}
+
+#btn-comment:hover {
+  /* transform: scale(1.1); */
+  background-color: whitesmoke;
+  color: black;
+}
+
+.icon img{
+    width: fit-content;
+}

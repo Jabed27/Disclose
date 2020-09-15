@@ -6,15 +6,13 @@ class ProblemShare{
     constructor(){
             
     }
-    storeSharedProblem(Name,location,catagory,complain,likes,dislikes,anonymous,res){
+    storeSharedProblem(Name,location,catagory,complain,anonymous,res){
          
             const ID = problemcollection.doc().set({
                 Complainer_name:Name,
                 Location:location,
                 Problem_Catagory:catagory,
                 Complain:complain,
-                Likes:likes,
-                Dislikes:dislikes,
                 Anonymous:anonymous
               })
             .then(()=>{
