@@ -15,9 +15,34 @@
 
     <!-- my css -->
     <link rel="stylesheet" href="/static/css/afterLogin.css">
-
+    <script src = "/static/httprequest/afterlogin.js" defer></script>
     <title>Logged In</title>
 </head>
+<style>
+    table{
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+
+    }
+    td,th{
+      border: 1px solid #cccccc;
+      padding: 9px;
+
+    }
+    th{
+      font-weight: bold;
+      text-transform:uppercase;
+    }
+    tr:nth-child(even){
+      background-color: #dddddd;
+    }
+    tr:hover{
+      background-color: black;
+      color: white;
+    }
+  </style>
+ 
 
 <body>
 
@@ -72,9 +97,9 @@
                     <div class="row d-flex flex-row justify-content-center mt-5">
 
                         <!-- Select your locality -->
-                        <div class="md-col-6 mx-3 mb-4">
+                        <div class="md-col-3 mx-3 mb-4">
                             <label for="exampleFormControlSelect1">Select your locality</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <select class="form-control" id="areaSelect">
                                 <option>Gulshan</option>
                                 <option>Banani</option>
                                 <option>Hatirpul</option>
@@ -86,20 +111,19 @@
                         <!-- Select problem catagory -->
                         <div class="md-col-6 mx-3">
                             <label for="exampleFormControlSelect2">Select problem catagory</label>
-                            <select class="form-control" id="exampleFormControlSelect2">
-                                <option>Wasa</option>
-                                <option>Electricity</option>
-                                <option>Roads</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
+                    <select class="form-control" id="problemSelect">
+                        <option>Wasa</option>
+                        <option>Electricity</option>
+                        <option>Roads</option>
+                        
+                    </select>
                         </div>
 
                     </div>
 
                     <!-- save btn -->
                     <div class="d-flex justify-content-center my-4">
-                        <button id="btn-save">Save</button>
+                        <button id="post-btn">See problems</button>
                     </div>
 
                     <!-- share btn -->
@@ -124,90 +148,21 @@
     </div>
 
     <!-- cards -->
-    <div class="d-flex justify-content-center p-2">
-        <div class="card">
-            <div class="card-body mb-5">
+    <table>
+        <thead>
+         <tr>
+           <th>Complainer_name</th>
+           <th>Location</th>
+           <th>Problem_Catagory</th>
+           <th>Complain</th>
+         </tr>
+      
+        </thead>
+        <tbody id="tableData">
 
-                <!-- Top Part -->
-                <div class="top-part d-flex justify-content-between p-3 my-3">
-                    <h6 class="card-subtitle mb-2 ">Name: _______</h6>
-                    <h6 class="card-subtitle mb-2 ">To: ________</h6>
-                </div>
+        </tbody>
 
-                <!-- middle Part -->
-                <div class="mid-part justify-content-center mb-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est officiis facilis ut! Sint laborum
-                    voluptas amet inventore exercitationem repellat cupiditate soluta hic tempora eveniet. Assumenda
-                    repellendus vero iure aut quo!
-                </div>
-
-                <!-- bottom Part -->
-                <div class="card-footer bottom-part d-flex justify-content-between p-3">
-                    <div class="p-3 ">
-                        <button id="btn-comment">Comment</button>
-                    </div>
-
-                    <div class="d-flex flex-row align-items-center p-3 mt-4">
-                        <div class="px-3 d-flex flex-row  icon">
-                            <p>
-                                <img src="/static/imagesafterlogin/images/like.png" class="px-1" alt=""><span>46</span>
-                            </p>
-                        </div>
-
-                        <div class="px-3 d-flex flex-row icon">
-                            <p>
-                                <img src="/static/imagesafterlogin/images/dislike.png" class="px-1" alt=""><span>46</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="card-body mb-5">
-
-                <!-- Top Part -->
-                <div class="top-part d-flex justify-content-between p-3 my-3">
-                    <h6 class="card-subtitle mb-2 ">Name: _______</h6>
-                    <h6 class="card-subtitle mb-2 ">To: ________</h6>
-                </div>
-
-                <!-- middle Part -->
-                <div class="mid-part justify-content-center mb-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est officiis facilis ut! Sint laborum
-                    voluptas amet inventore exercitationem repellat cupiditate soluta hic tempora eveniet. Assumenda
-                    repellendus vero iure aut quo!
-                </div>
-
-                <!-- bottom Part -->
-                <div class="card-footer bottom-part d-flex justify-content-between p-3">
-                    <div class="p-3 ">
-                        <button id="btn-comment">Comment</button>
-                    </div>
-
-                    <div class="d-flex flex-row align-items-center p-3 mt-4">
-                        <div class="px-3 d-flex flex-row  icon">
-                            <p>
-                                <img src="/static/imagesafterlogin/images/like.png" class="px-1" alt=""><span>46</span>
-                            </p>
-                        </div>
-
-                        <div class="px-3 d-flex flex-row icon">
-                            <p>
-                                <img src="/static/imagesafterlogin/images/dislike.png" class="px-1" alt=""><span>46</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-    </div>
+  </table>
 
     <!-- --------------------------------------------------------------------------------- -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

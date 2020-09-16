@@ -51,6 +51,7 @@ GetloadAlluserdproblemfromserver(){
 }
 
     GetSpecificComplain(res){
+      
       const query = problemcollection.where('Location', '==', 'Hatirpool').where('Problem_Catagory','==','Wasa');
       query.get().then(snapshot => {
         snapshot.forEach(user => {

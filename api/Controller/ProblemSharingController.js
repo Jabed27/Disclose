@@ -15,7 +15,11 @@ const Postproblem = (req,res,next)=>{
 //getting all complain
 const GetAllComplain=(req,res,next)=>{
     var getproblem = new problemModel.ProblemShare();
-    getproblem.GetloadAlluserdproblemfromserver(res)
+   var loadallproblem =  getproblem.GetloadAlluserdproblemfromserver(res)
+    res.status(200).json({
+        //message:"All contact",
+        loadallproblem:loadallproblem
+    })
 }
 // adiministrator will get specifiq complain within the catagory
 const GetspecificComplain=(req,res,next)=>{
