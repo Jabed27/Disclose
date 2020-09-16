@@ -1,0 +1,84 @@
+header {
+  background-color: #8e6ba5;
+  /* background-image: url("images/Image1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; */
+}
+
+.btn-out {
+  color: white;
+  font-weight: 600;
+  margin: 0 10px;
+  font-size: 20px;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-out:hover {
+  transform: scale(1.2);
+  color: #ffed91;
+}
+
+.nav-link {
+  margin: 0 10px;
+  font-size: 20px;
+}
+/* --------------------------------------------------------------------- */
+
+.card {
+  width: 700px;
+  margin: 10px;
+  /* margin-bottom: 0 ; */
+  /* padding: 0; */
+  -webkit-box-shadow: 9px 5px 24px 6px #989898;
+  box-shadow: 9px 5px 24px 6px #989898;
+  border-radius: 10px;
+}
+
+.card-body {
+  padding: 0;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.top-part {
+  /* background: teal; */
+  height: 50px;
+  color: black;
+}
+
+.mid-part {
+  /* background: powderblue; */
+  min-height: 50px;
+
+  min-width: 200px;
+  max-width: 500px;
+
+  border: 1px solid black;
+  /* border-radius: 10px; */
+
+  padding: 10px;
+
+  margin: 10px auto;
+}
+
+.bottom-part {
+  background: #8e6ba5;
+  height: 80px;
+  color: white;
+}
+
+#btn-seeComments {
+  background: #8e6ba5;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+
+  /* transition: all 0.4s ease-in-out; */
+}
+
+#btn-seeComments:hover {
+  /* transform: scale(1.1); */
+  background-color: whitesmoke;
+  color: black;
+}
