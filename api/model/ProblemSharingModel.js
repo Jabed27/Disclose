@@ -18,7 +18,7 @@ class ProblemShare{
   var data = [];
   data.push(details);
   loadAllproblem[uid] = details;
-  console.log("All prob "+JSON.stringify(loadAllproblem));
+  //console.log("All prob "+JSON.stringify(loadAllproblem));
   }
    async storeSharedProblem(Name,location,catagory,complain,anonymous,res){
     var uid = problemcollection.doc().id;
