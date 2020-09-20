@@ -19,6 +19,7 @@ const contactRoute = require('./api/routes/contact')
 const problemshareRoute = require('./api/routes/ProblemShare')
 const userRoute = require('./api/routes/Authentication')
 const loadcontactalldata = require('./api/model/ContactWithUsModel')
+const loaduserlldata = require('./api/model/AuthenticationModel')
 const loadallsharedproblem = require('./api/model/ProblemSharingModel')
 // morgan will formate how we want to see the data
 app.use(morgan("dev"))//devloment mode e  dekhabe
@@ -42,6 +43,7 @@ app.listen(PORT,()=>{      // now server is running
     //first server will loaded up all the data for the first time while the web is running
     new loadcontactalldata.ContactModel().GetContactUserData()
     new loadallsharedproblem.ProblemShare().GetAllstoredComplain()
+    new loaduserlldata.UserModel().GetUserData()
 })          
 // route created
 app.get('/',function(req, res){

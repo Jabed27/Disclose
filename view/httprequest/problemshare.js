@@ -49,13 +49,18 @@ const sendproblem=()=>{
     var msgvalue = document.getElementById('inputTextarea').value;
     //console.log("hi"+document.getElementById('inputTextarea').value);
     //console.log("hi"+document.getElementById('Inputname').value);
-    sendHttpRequest('POST','http://localhost:3000/disclose/api/problemshare/store',{
-        name:namevalue,
-        Location:opt1.value,
-        Problem_Catagory:opt.value,
-        Complain:msgvalue,
-        Anonymous:selanonymous.value
-    });
+    if(namevalue==""||msgvalue==""){
+         alert("fill all fields");
+    }else{
+        sendHttpRequest('POST','http://localhost:3000/disclose/api/problemshare/store',{
+            name:namevalue,
+            Location:opt1.value,
+            Problem_Catagory:opt.value,
+            Complain:msgvalue,
+            Anonymous:selanonymous.value
+        });
+    }
+    
 };
 document.getElementById("post-btn").addEventListener('click', e => {
     e.preventDefault();
@@ -64,7 +69,7 @@ document.getElementById("post-btn").addEventListener('click', e => {
             sendproblem();
         }else{
                alert("no user active, you have to loged in to share problems")
-                window.location.replace("/signin")
+                //window.location.replace("/signin")
             
         }
     })

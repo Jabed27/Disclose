@@ -20,7 +20,7 @@ var firebaseConfig = {
         auth.onAuthStateChanged(function(user){
             if(user){
                 var email = user.email;
-                alert("Active user"+email);
+                alert("Active user "+email);
                 //is signed in
                 window.location.replace("/");
                 

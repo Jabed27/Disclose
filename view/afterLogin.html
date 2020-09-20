@@ -8,7 +8,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
         rel="stylesheet" />
@@ -17,7 +21,7 @@
     <!-- my css -->
     <link rel="stylesheet" href="/static/css/afterLogin.css">
     <script src = "/static/httprequest/afterlogin.js" defer></script>
-    <script src="/static/Auth/signout.js" defer></script>
+    
     <title>Logged In</title>
 </head>
 <style>
@@ -77,7 +81,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="\static\Contact.html">Contact</a>
                     </li>
-
+                    <li class="nav-item">
+                        <!--<button class="nav-link"><a href="\static\log_in.html">Log In</a> </button>-->
+                        <a class="nav-link" href="\static\log_in.html">Log In</a>
+                    </li>
                     <!-- 4 Button - LogOut -->
                     <li class="nav-item">
                         <button class="btn btn-out" onclick="signout()">Log-Out</button>

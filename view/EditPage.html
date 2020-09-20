@@ -2,12 +2,18 @@
 <html>
     <head>
         <title style="color:ffed8c">Disclose</title> 
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+        <script src="/static/Auth/edit.js"></script>
         
         <link rel="stylesheet" href="css/editpage.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Disclose</a>
+            <a class="navbar-brand" href="\static\index.html">Disclose</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -15,19 +21,22 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="\static\index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About<span class="sr-only">(current)</a>
+                  <a class="nav-link" href="\static\index.html">About<span class="sr-only">(current)</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Contact.html">Contact<span class="sr-only">(current)</a>
+                  <a class="nav-link" href="\static\Contact.html">Contact<span class="sr-only">(current)</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link nav1" href="#">Log-in<span style="font-weight: bold;"></span> </a>
+                    <a class="nav-link" href="\static\Profile.html">profile<span class="sr-only">(current)</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link nav1" href="\static\log_in.html">Log-in<span style="font-weight: bold;"></span> </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav1" href="#">Sign-up<span style="font-weight: bold;"></span></a>
+                    <a class="nav-link nav1" href="\static\sign_up.html">Sign-up<span style="font-weight: bold;"></span></a>
                 </li>
               </ul>
               
@@ -39,48 +48,93 @@
         <div class="how-section1">
           <div class="row">
               <div class="col-md-6 how-img">
-                  <img src="images/contact.png" class="rounded-circle img-fluid" alt=""/>
+                  <img src="/static/images/illus.png" class="rounded-circle img-fluid" alt=""/>
               </div>
               <div class="col-md-6 how-form">
-                <form>
-                  <fieldset>
-                    
-                   
-                    <div class="form-group">
-                        <label for="fname">First Name</label>
-                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                      
-                    </div>
-                    <div class="form-group">
-                        <label for="lname">Last Name</label>
-                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                    </div>
-                    <div class="form-group">
-                        <label for="uname">User Name</label>
-                        <input type="text" id="uname" name="username" placeholder="Your user name..">
-                    </div>
-                    <div class="form-group">
-                        <label for="National Id">NId..</label>
-                        <input type="text" id="nid" name="nid"placeholder="Your Nid..">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1"> Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Confirm Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
-                    </div>
-                    <div class="form-group">
-                      <label for="addressTextarea">Address</label>
-                      <textarea class="form-control" id="addressTextarea" rows="3"></textarea>
-                    </div>
-                   <div class="contact_submit">
-                     <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                    
-                  </fieldset>
-                </form>
+                <form class="needs-validation" novalidate>
+                  <!-- row name -->
+                  <div class="form-row px-5">
+                      <!-- First name -->
+                      <div class="col-md-6 mb-2">
+                          <label for="validationCustom01">First name</label>
+                          <input type="text" class="form-control" id="validationCustom01" required>
+
+                      </div>
+
+                      <!-- Last name -->
+                      <div class="col-md-6 mb-2">
+                          <label for="validationCustom02">Last name</label>
+                          <input type="text" class="form-control" id="validationCustom02" required>
+
+                      </div>
+                  </div>
+
+                  <!-- row email 
+                  <div class="form-row px-5">
+                      <div class="col-md-12 mb-2">
+                          <label for="validationCustom03">Email ID</label>
+                          <input type="email" class="form-control" id="validationCustom03" required>
+
+                      </div>
+
+                  </div>
+                  -->
+
+                  <!-- row NID -->
+                  <div class="form-row px-5">
+                      <div class="col-md-12 mb-2">
+                          <label for="validationCustom04">National ID card no.</label>
+                          <input type="number" class="form-control" id="validationCustom04" required>
+
+                      </div>
+
+                  </div>
+
+                  <!-- row Address -->
+                  <div class="form-row px-5">
+                      <div class="col-md-12 mb-2">
+                          <label for="validationCustom05">Address</label>
+                          <input type="text" class="form-control" id="validationCustom05" required>
+
+                      </div>
+
+                  </div>
+
+
+                  <!-- row password -->
+                  <div class="form-row px-5">
+
+                      <!-- password 
+                      <div class="col-md-6 mb-2">
+                          <label for="validationCustom06_password">Password</label>
+                          <input type="password" class="form-control" id="validationCustom06_password" required>
+
+                      </div>
+-->
+                      <!-- confirm password 
+                      <div class="col-md-6 mb-2">
+                          <label for="validationCustom07_confirmPass">Confirm Password</label>
+                          <input type="password" class="form-control" id="validationCustom07_confirmPass" required>
+                      </div>
+                      -->
+                  </div>
+
+<!--
+                  <div class="form-group px-5">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                          <label class="form-check-label" for="invalidCheck">
+                              Agree to terms and conditions
+                          </label>
+                      </div>
+                  </div>-->
+
+                  <!-- Sign Up Button -->
+                  <div class="text-center px-5">
+                    <button id="edit" onclick="sendData()" type="button" class="btn btn-primary">eddit</button>
+                </div>
+                
+              </form>
               </div>
           </div>
           
