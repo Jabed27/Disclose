@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+       <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+            <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
+            rel="stylesheet" />
+    
+        <!-- my css -->
+        <link rel="stylesheet" href="/static/css/authority.css">
+        <script src="/static/Auth/profile.js" defer></script>
+        <script  src="/static/Auth/signout.js" defer></script>
+        <!--eki kaz so after login er http req call korlam
+        <script src = "/static/httprequest/afterlogin.js" defer></script>
+        -->
+        <title>profile</title>
+
+       </head>
+
+       <body>
+
+        <header>
+            <!-- NAVBAR -  -->
+            <nav class="navbar navbar-expand-lg navbar-dark d-flex mx-5">
+                <a class="navbar-brand" href="\static\index.html"><img src="/static/imagesauthority/Logo2.png" alt="Logo"></a>
+    
+                <!-- Hamburger Menu-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <!-- NAVBAR ITEMS -->
+                <div class="text-center collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <!-- 1 Home -->
+                        <li class="nav-item active">
+                            <a class="nav-link" href="\static\index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+    
+                        <!-- 2 About -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="\static\index.html">About</a>
+                        </li>
+    
+                        <!-- 3 Contact -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="\static\Contact.html">Contact</a>
+                        </li>
+                        <!-- 4 Button - LogIn -->
+                    <li class="nav-item">
+                      <a class="nav-link" href="\static\log_in.html">Log In</a> 
+                    </li>
+
+                    <!-- 5 Button - SignIn -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="\static\sign_up.html">Sign up</a>
+                    </li>
+                        <!-- 4 Button - LogOut -->
+                        <li class="nav-item">
+                            <button class="btn btn-out" onclick="signout()">Log-Out</button>
+                        </li>
+    
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="d-flex justify-content-center m-5">
+            <h1>Your Profile</h1>
+        </div>
+        <div class="main" style="text-align: center;" >
+
+            <section class="profile">
+      
+                <div class="container">
+                    <div class="profile-content">
+                        <form id="profile-form" class="profile-form">
+                            <h2 class="form-title">Welcome To Your Profile!!</h2>
+                        
+                          <!--User name-->
+                          <h4 id="firstname" contenteditable="false">First Name:</h4>
+                          <h4 id="lastname" contenteditable="false">Last Name:</h4>
+                          <div class="form-group">
+                              <label style="font-weight:bold;font-size: 20px;"> Email:  </label>
+                              <label id="useremail" for="Email"style="color:#00BFFF;font-weight:bold;font-size: 20px;"contenteditable="false"></label>
+                          </div>
+                          <div class="form-group">
+                          <label style="font-weight:bold;font-size: 20px;"> NID No:  </label>
+                              <label id="usernid" for="nid"style="color:#00BFFF;font-weight:bold;font-size: 20px;"contenteditable="false"></label>
+                          </div>
+                          <div class="form-group">
+                            <label style="font-weight:bold;font-size: 20px;"> Location:  </label>
+                                <label id="location" for="nid"style="color:#00BFFF;font-weight:bold;font-size: 20px;"contenteditable="false"></label>
+                            </div>
+                          <div class=" px-5 d-flex flex-row align-items-center justify-content-center mt-5">
+                            <p>Do you want to change your profile details?</p>
+                            <button class="btn btn-out"><a href="/static/EditPage.html">Edit</a></button> 
+                        </div>
+                        </form>
+      
+                    </div>
+                </div>
+            </section>
+      
+        </div>
+       </body>
+</html>

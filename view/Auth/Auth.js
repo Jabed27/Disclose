@@ -73,14 +73,26 @@ const sendData=()=>{
   if(fname=="" ||lname ==""||nid==""||address==""||email==""||password==""){
        alert('fill all the field please');
   }else{
-      sendHttpRequest('POST','http://localhost:3000/disclose/api/auth/signup',{
+      auth.onAuthStateChanged(function(user){
+        if(user){
+          localStorage.setItem("First_Name",fname);
+          localStorage.setItem("Last_Name",lname);
+          localStorage.setItem("Email",email);
+          localStorage.setItem("Address",address);
+          localStorage.setItem("NID",nid);
+          localStorage.setItem("userid",user.uid)
+          sendHttpRequest('POST','http://localhost:3000/disclose/api/auth/signup',{
           Fname:fname,
           Lname:lname,
           email:email,
           address:address,
           nid:nid,
           pass:password,
+          userid:user.uid,
       });
+        }
+      })
+      
       
   }
   

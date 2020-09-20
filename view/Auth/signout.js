@@ -16,5 +16,5 @@ var firebaseConfig = {
   function signout(){
       auth.signOut();
       alert("you're signout!!");
-      window.location.replace("/signin");
+      //window.location.replace("/signin");
   }
