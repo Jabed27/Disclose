@@ -20,6 +20,7 @@ class UserModel{
     }
     
 }
+//storing to the data base
   async StoreSingnUpUser(firstname,lastname,email,address,nid,hash,id){
     UserModel.AllUsersData[id]={
       'First_Name':firstname,
@@ -42,7 +43,7 @@ class UserModel{
       this.logger();
       //return uid;
   }
-
+// edit user data
   async EditUser(firstname,lastname,address,nid,id){
     console.log(id);
     //console.log(JSON.stringify(UserModel.AllUsersData[id]))
@@ -72,6 +73,7 @@ class UserModel{
         var lname=user.data()['Last_Name'];
         var address=user.data()['Address'];
         var nid=user.data()['NID'];
+        //server loading
         UserModel.AllUsersData[uid]={
           'First_Name':fname,
           'Last_Name':lname,

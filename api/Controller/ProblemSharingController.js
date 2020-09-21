@@ -1,5 +1,6 @@
 const problemModel = require('../model/ProblemSharingModel')
 //storing 
+//getting req from client side then redirecting to the model
 const Postproblem = (req,res,next)=>{
     var problemshare = new  problemModel.ProblemShare();
     problemshare.storeSharedProblem(req.body.name,req.body.Location,req.body.Problem_Catagory,req.body.Complain,req.body.Anonymous,res).then((uid)=>{

@@ -1,3 +1,4 @@
+//ui will be loaded with the value which are stored in localstorage
 window.setUserDetailsOnProfile= function()
 {
 
@@ -6,7 +7,7 @@ window.setUserDetailsOnProfile= function()
     var email=document.getElementById("useremail");
     var nid=document.getElementById("usernid");
     var location=document.getElementById("location");
-   console.log(location,nid);
+    console.log(location,nid);
     fname.innerHTML=localStorage.getItem("First_Name");
     lname.innerHTML= localStorage.getItem("Last_Name");
     email.innerHTML=localStorage.getItem("Email");

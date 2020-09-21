@@ -34,6 +34,7 @@ const PostuserInfoSignUp = (req,res,next)=>{
     })
         
 }
+//getting req from client side then redirecting to the model
 const postEdituserinfo = (req,res,next)=>{
     const firstname=req.body.Fname;
     const lastname = req.body.Lname;

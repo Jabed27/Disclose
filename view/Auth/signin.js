@@ -1,3 +1,4 @@
+//firebase initilization
 var firebaseConfig = {
     apiKey: "AIzaSyBXhlkAZkw1Z_9Ic-tjLzo5y6QHtg2pB8w",
     authDomain: "disclose-2bf74.firebaseapp.com",
@@ -17,6 +18,7 @@ var firebaseConfig = {
     var password = document.getElementById("password");
     console.log(email.value,password.value)
     const promise = auth.signInWithEmailAndPassword(email.value,password.value).then(()=>{
+       //checking user is active or not
         auth.onAuthStateChanged(function(user){
             if(user){
                 var email = user.email;

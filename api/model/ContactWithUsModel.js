@@ -21,7 +21,7 @@ class ContactModel{
   loadAllContactUser[uid] = details;
   console.log(JSON.stringify(loadAllContactUser));
   }
-
+  //database storing
   async storeUserData(Name,Email,Message,res){
      var uid = usersCollection.doc().id;
      console.log(uid)

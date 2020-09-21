@@ -1,6 +1,6 @@
 const { json } = require('body-parser');
 const ContactModel = require('../model/ContactWithUsModel')
-
+//getting req from client side then redirecting to the model
 const PostContactInfo = (req,res,next)=>{
     
     const username=req.body.name;
@@ -20,7 +20,7 @@ const PostContactInfo = (req,res,next)=>{
     });
     
 }
-
+//getting req from client side then redirecting to the model
 const GetContactinfo = (req,res,next)=>{
     var getcontactmodel = new ContactModel.ContactModel();
     //getcontactmodel.GetContactUserData();

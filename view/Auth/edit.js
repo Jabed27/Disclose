@@ -1,3 +1,4 @@
+//connecting firebase
 var firebaseConfig = {
     apiKey: "AIzaSyBXhlkAZkw1Z_9Ic-tjLzo5y6QHtg2pB8w",
     authDomain: "disclose-2bf74.firebaseapp.com",
@@ -35,7 +36,7 @@ const sendHttpRequest = (method, url, data) =>{
     //alert('contact successfully!')
     return promise;
   }
-
+//sending http req to edit user data
 const sendData=()=>{
     var fname = document.getElementById("validationCustom01").value;
     var lname = document.getElementById("validationCustom02").value;
