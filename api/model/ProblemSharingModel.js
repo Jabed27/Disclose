@@ -20,6 +20,7 @@ class ProblemShare{
   loadAllproblem[uid] = details;
   //console.log("All prob "+JSON.stringify(loadAllproblem));
   }
+  //database storing
    async storeSharedProblem(Name,location,catagory,complain,anonymous,res){
     var uid = problemcollection.doc().id;
             await problemcollection.doc().set({

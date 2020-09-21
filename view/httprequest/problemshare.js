@@ -30,7 +30,7 @@ const sendHttpRequest = (method, url, data) =>{
     alert('problem sent successfully!')
     return promise;
 }
-
+//sending req for storing problem to db
 const sendproblem=()=>{
     //var emailvalue = document.getElementById('InputEmail1').value;
     var selarea = document.getElementById('areaSelect');

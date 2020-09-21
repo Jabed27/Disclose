@@ -21,6 +21,7 @@ const sendHttpRequest = (method, url, data) =>{
     alert('contact successfully!')
     return promise;
 }
+//sending req for storing to database the contact msg
 const sendData=()=>{
     var emailvalue = document.getElementById('InputEmail1').value;
     var namevalue = document.getElementById('Inputname').value;
