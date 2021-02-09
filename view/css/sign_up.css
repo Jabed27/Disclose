@@ -73,7 +73,7 @@ p{
 
 .left-img {
   /* min-height: 100%; */
-  background-image: url("images/bg.png");
+  background-image: url("/static/images/bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }

@@ -49,6 +49,11 @@ const sendproblem=()=>{
     var msgvalue = document.getElementById('inputTextarea').value;
     //console.log("hi"+document.getElementById('inputTextarea').value);
     //console.log("hi"+document.getElementById('Inputname').value);
+    let date_ob = new Date();
+ let date = ("0" + date_ob.getDate()).slice(-2);
+ let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+ let year = date_ob.getFullYear();
+ let formatted_date = date+"-"+month+"-"+year;
     if(namevalue==""||msgvalue==""){
          alert("fill all fields");
     }else{
@@ -57,7 +62,8 @@ const sendproblem=()=>{
             Location:opt1.value,
             Problem_Catagory:opt.value,
             Complain:msgvalue,
-            Anonymous:selanonymous.value
+            Anonymous:selanonymous.value,
+            Date:formatted_date
         });
     }
     

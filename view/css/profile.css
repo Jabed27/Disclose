@@ -1,0 +1,28 @@
+body{
+    font-family: sans-serif;
+    color: #3c3939;
+    background-color: #9c9393;
+}
+.profile-content{
+    width: 500px;
+    margin: auto;
+    background: rgb(214, 206, 206);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.imgcontainer{
+    position: relative;
+}
+.info{
+    color: #4b4fe2;
+    margin-right: 16px;
+}
+.form-group{
+    padding: 20px;
+}
+.imgcontainer{
+    width: 200;
+    height: 100;
+}
+.inside{
+    margin-left: 5px;
+}

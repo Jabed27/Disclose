@@ -26,11 +26,11 @@ const sendData=()=>{
              }*/
              console.log(`${allproblemdata['loadallproblem'][key]['Location']}`)
              if(opt1.value==`${allproblemdata['loadallproblem'][key]['Location']}`&&opt.value==`${allproblemdata['loadallproblem'][key]['Problem_Catagory']}`&& 'True'==`${allproblemdata['loadallproblem'][key]['Anonymous']}`){
-                datatable += `<tr><td>${allproblemdata['loadallproblem'][key]['Complainer_name']}</td><td>${allproblemdata['loadallproblem'][key]['Location']}</td><td>${allproblemdata['loadallproblem'][key]['Problem_Catagory']}</td><td>${allproblemdata['loadallproblem'][key]['Complain']}</td></tr>`;
+                datatable += `<tr><td>'anonymous user'</td><td>${allproblemdata['loadallproblem'][key]['Location']}</td><td>${allproblemdata['loadallproblem'][key]['Problem_Catagory']}</td><td>${allproblemdata['loadallproblem'][key]['Complain']}</td><td>${allproblemdata['loadallproblem'][key]['Date']}</td></tr>`;
                 console.log(allproblemdata['loadallproblem'][key]['Location'])
              }
              else if(opt1.value==`${allproblemdata['loadallproblem'][key]['Location']}`&&opt.value==`${allproblemdata['loadallproblem'][key]['Problem_Catagory']}`&& 'False'==`${allproblemdata['loadallproblem'][key]['Anonymous']}`){
-              datatable += `<tr><td>'anonymous user'</td><td>${allproblemdata['loadallproblem'][key]['Location']}</td><td>${allproblemdata['loadallproblem'][key]['Problem_Catagory']}</td><td>${allproblemdata['loadallproblem'][key]['Complain']}</td></tr>`;
+              datatable += `<tr><td>${allproblemdata['loadallproblem'][key]['Complainer_name']}</td><td>${allproblemdata['loadallproblem'][key]['Location']}</td><td>${allproblemdata['loadallproblem'][key]['Problem_Catagory']}</td><td>${allproblemdata['loadallproblem'][key]['Complain']}</td><td>${allproblemdata['loadallproblem'][key]['Date']}</td></tr>`;
               console.log(allproblemdata['loadallproblem'][key]['Location'])
            }
             
