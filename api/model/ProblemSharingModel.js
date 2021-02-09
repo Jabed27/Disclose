@@ -7,13 +7,14 @@ class ProblemShare{
             
     }
     //storing to the server
-  storeuserProblemToServer(uid,name,location,catagory,complain,anonymous){
+  storeuserProblemToServer(uid,name,location,catagory,complain,anonymous,date){
     const details={
       'Complainer_name':name,
       'Location':location,
       'Problem_Catagory':catagory,
       'Complain':complain,
       'Anonymous':anonymous,
+      'Date':date,
   };
   var data = [];
   data.push(details);
@@ -21,14 +22,15 @@ class ProblemShare{
   //console.log("All prob "+JSON.stringify(loadAllproblem));
   }
   //database storing
-   async storeSharedProblem(Name,location,catagory,complain,anonymous,res){
+   async storeSharedProblem(Name,location,catagory,complain,anonymous,date,res){
     var uid = problemcollection.doc().id;
             await problemcollection.doc().set({
                 Complainer_name:Name,
                 Location:location,
                 Problem_Catagory:catagory,
                 Complain:complain,
-                Anonymous:anonymous
+                Anonymous:anonymous,
+                Date:date
               })
               return uid;
     }
@@ -37,7 +39,7 @@ class ProblemShare{
       problemcollection.get().then(snapshot => {
         snapshot.forEach(user => {
           loadAllproblem[user.id] = user.data();
-          //console.log(user.id, ' => ', user.data());
+          console.log(user.id, ' => ', user.data());
           //console.log(JSON.stringify(loadAllproblem))
         });
        

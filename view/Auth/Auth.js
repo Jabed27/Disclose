@@ -39,28 +39,28 @@ async function signup(){
 
 const sendHttpRequest = (method, url, data) =>{
   const promise = new Promise((resolve,reject)=>{
-      const xhr = new XMLHttpRequest();
-      xhr.open(method,url);
-      xhr.responseType = 'json'
-      if(data){
-          xhr.setRequestHeader('Content-Type','application/json');
-      
-      }
-      xhr.onload = () =>{
-          if (xhr.status >= 200 || xhr.status<=210) { 
-              window.location.replace("/signin"),alert("You are signed up");
-           } else { 
-             alert(xhr.response)
-           }
-          resolve(xhr.response);
-          console.log(xhr.response)
-      };
-      xhr.send(JSON.stringify(data));
-  });
-  //alert('contact successfully!')
-  return promise;
+    const xhr = new XMLHttpRequest();
+    xhr.open(method,url);
+    xhr.responseType = 'json'
+    if(data){
+        xhr.setRequestHeader('Content-Type','application/json');
+    
+    }
+    xhr.onload = () =>{
+        if (xhr.status >= 200 || xhr.status<=210) { 
+          window.location.replace("/signin"),alert("You are signed up");
+         } else { 
+           alert(xhr.response)
+         }
+        resolve(xhr.response);
+        console.log(xhr.response)
+    };
+    xhr.send(JSON.stringify(data));
+});
+//alert('contact successfully!')
+return promise;
 }
-
+//window.location.replace("/signin"),alert("You are signed up");
 const sendData=()=>{
   var fname = document.getElementById("validationCustom01").value;
   var lname = document.getElementById("validationCustom02").value;

@@ -3,9 +3,9 @@ const problemModel = require('../model/ProblemSharingModel')
 //getting req from client side then redirecting to the model
 const Postproblem = (req,res,next)=>{
     var problemshare = new  problemModel.ProblemShare();
-    problemshare.storeSharedProblem(req.body.name,req.body.Location,req.body.Problem_Catagory,req.body.Complain,req.body.Anonymous,res).then((uid)=>{
+    problemshare.storeSharedProblem(req.body.name,req.body.Location,req.body.Problem_Catagory,req.body.Complain,req.body.Anonymous,req.body.Date,res).then((uid)=>{
         console.log( uid)
-        problemshare.storeuserProblemToServer(uid,req.body.name,req.body.Location,req.body.Problem_Catagory,req.body.Complain,req.body.Anonymous);
+        problemshare.storeuserProblemToServer(uid,req.body.name,req.body.Location,req.body.Problem_Catagory,req.body.Complain,req.body.Anonymous,req.body.Date);
         res.status(201).json({
             message:"problem shared succesfully!"
         })
