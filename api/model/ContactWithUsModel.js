@@ -3,6 +3,7 @@ const database = firebase.firestore();
 const usersCollection = database.collection('Contact');
 //loadAllContactUser will store all the contacts globally at the first time when the server run
 const loadAllContactUser = {}
+//i will just export the ContactModel class only for that i don't need to pass evry function
 class ContactModel{
   
   constructor()
