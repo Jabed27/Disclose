@@ -9,7 +9,7 @@ const path = require('path');
 const app = express();
 app.use('/static', express.static('view'))
 //client give value in url than it needs to extrected
-//that why body parser is used
+//that's why body parser is used
 
 //const bodyParser = require('body-parser')
 //importing contact routes
